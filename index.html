@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PlayCorner.io - Your ultimate destination for online games. Discover and play the best curated web games with detailed reviews and ratings.">
+    <meta name="keywords" content="online games, web games, browser games, game reviews, free games, PlayCorner">
+    <title>PlayCorner.io | Best Online Games Collection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#10b981',
+                        dark: '#1e293b',
+                        light: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .game-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <span class="text-primary text-2xl font-bold">PlayCorner<span class="text-secondary">.io</span></span>
+            </a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#featured" class="hover:text-primary transition-colors">Featured Games</a>
+                <a href="#action" class="hover:text-primary transition-colors">Action</a>
+                <a href="#puzzle" class="hover:text-primary transition-colors">Puzzle</a>
+                <a href="#strategy" class="hover:text-primary transition-colors">Strategy</a>
+                <a href="#about" class="hover:text-primary transition-colors">About</a>
+            </nav>
+            <button class="md:hidden text-gray-600 focus:outline-none" id="menu-toggle">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white w-full" id="mobile-menu">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#featured" class="hover:text-primary transition-colors">Featured Games</a>
+                <a href="#action" class="hover:text-primary transition-colors">Action</a>
+                <a href="#puzzle" class="hover:text-primary transition-colors">Puzzle</a>
+                <a href="#strategy" class="hover:text-primary transition-colors">Strategy</a>
+                <a href="#about" class="hover:text-primary transition-colors">About</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-primary to-secondary text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Discover Amazing Online Games</h1>
+            <p class="text-xl md:text-2xl mb-8">Your ultimate destination for the best curated web games</p>
+            <a href="#featured" class="bg-white text-primary font-bold py-3 px-6 rounded-full hover:bg-gray-100 transition-colors inline-block">Explore Games</a>
+        </div>
+    </section>
+
+    <!-- Featured Games Section -->
+    <section id="featured" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">Featured Games</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Game Card 1 -->
+                <div class="game-card bg-white rounded-lg overflow-hidden shadow-md" style="display: none;">
+                    <img src="https://via.placeholder.com/600x400/3b82f6/ffffff?text=2048" alt="2048 Game" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">2048</h3>
+                        <p class="text-gray-600 mb-4">Join the numbers and get to the 2048 tile! A highly addictive puzzle game.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Puzzle</span>
+                            <a href="https://play2048.co/" target="_blank" class="text-primary hover:underline">Play Now →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Card 2 -->
+                <div class="game-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="./imgs/castledefense.jpg" alt="Castle Defense" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Castle Defense</h3>
+                        <p class="text-gray-600 mb-4">An action-packed adventure where you play as a brave warrior defending your castle against waves of attacking monsters. </p>
+                        <div class="flex justify-between items-center">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded">Action</span>
+                            <a href="https://castledefensegame.com/" target="_blank" class="text-primary hover:underline">Play Now →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Card 3 -->
+                <div class="game-card bg-white rounded-lg overflow-hidden shadow-md" style="display: none;">
+                    <img src="https://via.placeholder.com/600x400/f59e0b/ffffff?text=Wordle" alt="Wordle Game" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Wordle</h3>
+                        <p class="text-gray-600 mb-4">Guess the hidden word in 6 tries. Each guess must be a valid 5-letter word.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded">Word</span>
+                            <a href="https://www.nytimes.com/games/wordle/index.html" target="_blank" class="text-primary hover:underline">Play Now →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Card 4 -->
+                <div class="game-card bg-white rounded-lg overflow-hidden shadow-md" style="display: none;">
+                    <img src="https://via.placeholder.com/600x400/ef4444/ffffff?text=Flappy+Bird" alt="Flappy Bird Game" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Flappy Bird</h3>
+                        <p class="text-gray-600 mb-4">Navigate a bird through pipes without touching them. Simple yet challenging!</p>
+                        <div class="flex justify-between items-center">
+                            <span class="bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded">Arcade</span>
+                            <a href="https://flappybird.io/" target="_blank" class="text-primary hover:underline">Play Now →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Action Games Section -->
+    <section id="action" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">Action Games</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Game Card 1 -->
+                <div class="game-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="./imgs/castledefense.jpg" alt="Castle Defense" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Castle Defense</h3>
+                        <p class="text-gray-600 mb-4">An action-packed adventure where you play as a brave warrior defending your castle against waves of attacking monsters. </p>
+                        <div class="flex justify-between items-center">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded">Action</span>
+                            <a href="https://castledefensegame.com/" target="_blank" class="text-primary hover:underline">Play Now →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Card 2 -->
+                <div class="game-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="./imgs/ballballgame.png" alt="Ball Ball Game" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Ball Ball Game</h3>
+                        <p class="text-gray-600 mb-4">A fast-paced reflex game where you must guide balls into rapidly spinning rods without collision.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded">Platformer</span>
+                            <a href="https://ballball.games/" target="_blank" class="text-primary hover:underline">Play Now →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Card 3 -->
+                <div class="game-card bg-white rounded-lg overflow-hidden shadow-md" style="display: none;">
+                    <img src="https://via.placeholder.com/600x400/ec4899/ffffff?text=Run+3" alt="Run 3 Game" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Run 3</h3>
+                        <p class="text-gray-600 mb-4">Run and jump through space tunnels, avoiding holes and staying on the path.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="bg-pink-100 text-pink-800 text-xs font-semibold px-2.5 py-0.5 rounded">Runner</span>
+                            <a href="https://www.coolmathgames.com/0-run-3" target="_blank" class="text-primary hover:underline">Play Now →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Card 4 -->
+                <div class="game-card bg-white rounded-lg overflow-hidden shadow-md" style="display: none;">
+                    <img src="https://via.placeholder.com/600x400/f97316/ffffff?text=Shell+Shockers" alt="Shell Shockers Game" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Shell Shockers</h3>
+                        <p class="text-gray-600 mb-4">A first-person shooter where you play as eggs armed with guns. Crack your enemies!</p>
+                        <div class="flex justify-between items-center">
+                            <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-2.5 py-0.5 rounded">FPS</span>
+                            <a href="https://shellshock.io/" target="_blank" class="text-primary hover:underline">Play Now →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Puzzle Games Section -->
+    <section id="puzzle" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">Puzzle Games</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Game Card 1 -->
+                <div class="game-card bg-white rounded-lg overflow-hidden shadow-md" style="display: none;">
+                    <img src="https://via.placeholder.com/600x400/0ea5e9/ffffff?text=Sudoku" alt="Sudoku Game" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Sudoku</h3>
+                        <p class="text-gray-600 mb-4">Fill in the grid so that every row, column, and 3×3 box contains the digits 1-9.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="bg-sky-100 text-sky-800 text-xs font-semibold px-2.5 py-0.5 rounded">Logic</span>
+                            <a href="https://sudoku.com/" target="_blank" class="text-primary hover:underline">Play Now →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Card 2 -->
+                <div class="game-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="./imgs/sweepmine.png" alt="Minesweeper Game" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Minesweeper</h3>
+                        <p class="text-gray-600 mb-4">Clear the board without detonating any mines. Use logic to identify safe squares.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="bg-teal-100 text-teal-800 text-xs font-semibold px-2.5 py-0.5 rounded">Classic</span>
+                            <a href="https://sweepmine.online/" target="_blank" class="text-primary hover:underline">Play Now →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Card 3 -->
+                <div class="game-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="./imgs/balloonmatch2.jpg" alt="Balloon Match" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Balloon Match</h3>
+                        <p class="text-gray-600 mb-4">A relaxing puzzle game where players connect balloons of the same color to eliminate them. </p>
+                        <div class="flex justify-between items-center">
+                            <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded">Puzzle</span>
+                            <a href="https://balloonmatch.win/" target="_blank" class="text-primary hover:underline">Play Now →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Card 4 -->
+                <div class="game-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="./imgs/woodstack.png" alt="Wood Stack" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Wood Stack</h3>
+                        <p class="text-gray-600 mb-4">Place wooden blocks from top to bottom to build the tallest tower possible without letting it topple.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="bg-rose-100 text-rose-800 text-xs font-semibold px-2.5 py-0.5 rounded">Puzzle</span>
+                            <a href="https://woodstackgame.com/" target="_blank" class="text-primary hover:underline">Play Now →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategy Games Section -->
+
+    <section id="strategy" class="py-16 bg-gray-100">
+        
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">Strategy Games</h2>
+            <div>This type of game is developing</div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" style="display: none;">
+                <!-- Game Card 1 -->
+                <div class="game-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://via.placeholder.com/600x400/0891b2/ffffff?text=Agar.io" alt="Agar.io Game" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Agar.io</h3>
+                        <p class="text-gray-600 mb-4">Grow your cell by consuming smaller cells while avoiding being eaten by larger ones.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="bg-cyan-100 text-cyan-800 text-xs font-semibold px-2.5 py-0.5 rounded">Multiplayer</span>
+                            <a href="https://agar.io/" target="_blank" class="text-primary hover:underline">Play Now →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Card 2 -->
+                <div class="game-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://via.placeholder.com/600x400/4f46e5/ffffff?text=Bloons+TD" alt="Bloons TD Game" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Bloons TD</h3>
+                        <p class="text-gray-600 mb-4">Defend your territory from waves of balloons using strategic tower placement.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded">Tower Defense</span>
+                            <a href="https://ninjakiwi.com/Games/Tower-Defense/Play/Bloons-Tower-Defense-5.html" target="_blank" class="text-primary hover:underline">Play Now →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Card 3 -->
+                <div class="game-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://via.placeholder.com/600x400/059669/ffffff?text=Civilization" alt="Civilization Game" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Civilization</h3>
+                        <p class="text-gray-600 mb-4">Build an empire to stand the test of time. Advance your civilization from ancient times.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-semibold px-2.5 py-0.5 rounded">4X</span>
+                            <a href="https://civilization.com/" target="_blank" class="text-primary hover:underline">Play Now →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Card 4 -->
+                <div class="game-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://via.placeholder.com/600x400/ca8a04/ffffff?text=Risk" alt="Risk Game" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Risk</h3>
+                        <p class="text-gray-600 mb-4">Conquer the world in this classic game of global domination and military strategy.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded">Board Game</span>
+                            <a href="https://www.pogo.com/games/risk" target="_blank" class="text-primary hover:underline">Play Now →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">About PlayCorner.io</h2>
+            <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">
+                <p class="text-gray-700 mb-4">PlayCorner.io is your ultimate destination for discovering and enjoying the best online games available on the web. We carefully curate our collection to bring you only the highest quality games across various genres.</p>
+                <p class="text-gray-700 mb-4">Our mission is to provide a clean, user-friendly platform where gamers of all ages can find entertaining games without the clutter and distractions found on many gaming sites.</p>
+                <p class="text-gray-700 mb-4">Each game in our collection has been tested and reviewed by our team of gaming enthusiasts. We provide direct links to the official game sites, ensuring you get the best and most secure gaming experience.</p>
+                <p class="text-gray-700">Whether you're looking for a quick puzzle to solve during your coffee break or an immersive strategy game to dive into for hours, PlayCorner.io has something for everyone.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">PlayCorner<span class="text-secondary">.io</span></h3>
+                    <p class="text-gray-400">Your ultimate destination for the best online games. Discover, play, and enjoy!</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#featured" class="text-gray-400 hover:text-white transition-colors">Featured Games</a></li>
+                        <li><a href="#action" class="text-gray-400 hover:text-white transition-colors">Action Games</a></li>
+                        <li><a href="#puzzle" class="text-gray-400 hover:text-white transition-colors">Puzzle Games</a></li>
+                        <li><a href="#strategy" class="text-gray-400 hover:text-white transition-colors">Strategy Games</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-discord text-2xl"></i></a>
+                    </div>
+                    <p class="mt-4 text-gray-400">Contact: changyu6899@gmail.com</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 PlayCorner.io. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
